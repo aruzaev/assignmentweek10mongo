@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/stylesheets/style.css")
+
+  body
+    include partials/navbar
+    br
+
+    block content
+      h1 User List
+      table
+        thead
+          tr
+            th Username
+            th Email
+        tbody
+          each user in users
+            tr
+              td= user.username
+              td= user.email
+
+    br
+    br
