@@ -41,8 +41,8 @@ app.use(
   })
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize()); // allows passport to intercept auth requests
+app.use(passport.session()); // session handling allows users to stay logged in
 
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
