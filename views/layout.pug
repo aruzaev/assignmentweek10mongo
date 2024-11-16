@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title #{title}
+  body
+    nav
+      if user
+        a(href='/logout') Logout
+      else
+        a(href='/login') Login
+        a(href='/register') Register
+    
+    if success_msg
+      .alert.success= success_msg
+    if error_msg
+      .alert.error= error_msg
+
+    block content

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  if errors && errors.length
+    ul.error-list
+      each error in errors
+        li= error.msg
+  if message
+    p.message= message
+  form(method="POST", action="/register")
+    div.form-group
+      label(for="name") Name:
+      input(type="text", name="name", id="name", placeholder="Name")
+    div.form-group
+      label(for="username") Username:
+      input(type="text", name="username", id="username", placeholder="Username")
+    div.form-group
+      label(for="email") Email:
+      input(type="email", name="email", id="email", placeholder="Email")
+    div.form-group
+      label(for="password") Password:
+      input(type="password", name="password", id="password", placeholder="Password")
+    div.form-group
+      label(for="confirmPassword") Confirm Password:
+      input(type="password", name="confirmPassword", id="confirmPassword", placeholder="Confirm Password")
+    button(type="submit") Register

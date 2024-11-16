@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  if errors.length
+    ul
+      each error in errors
+        li= error.msg
+  form(method="POST", action="/login")
+    input(type="email", name="email", placeholder="Email")
+    input(type="password", name="password", placeholder="Password")
+    button(type="submit") Login
